@@ -21,4 +21,11 @@ public class BackstagePassTest {
         assertEquals(11, item.getQuality());
     }
 
+    @Test
+    public void should_increase_in_quality_by_2_when_the_sell_in_is_in_10_days_or_less() {
+        BackstagePass item = (BackstagePass) item("Backstage Pass", 9, 10);
+        item.endOfDay();
+        assertEquals(12, item.getQuality());
+    }
+
 }

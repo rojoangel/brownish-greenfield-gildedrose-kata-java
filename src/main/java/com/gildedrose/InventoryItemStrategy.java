@@ -23,15 +23,8 @@ public class InventoryItemStrategy implements InventoryItem {
     }
 
     public void endOfDay() {
-        changeSellIn(this.item);
-        changeQuality(this.item);
+        this.sellInAlgorithm.apply(this.item);
+        this.qualityAlgorithm.apply(this.item);
     }
 
-    private void changeSellIn(Item item) {
-        this.sellInAlgorithm.apply(item);
-    }
-
-    private void changeQuality(Item item) {
-        this.qualityAlgorithm.apply(item);
-    }
 }

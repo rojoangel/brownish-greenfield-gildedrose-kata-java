@@ -25,6 +25,9 @@ public class GildedRoseItem {
             this.item.quality--;
         }
         this.item.quality--;
+        if (this.item.quality < 0) {
+            this.item.quality = 0;
+        }
     }
 
     @Override

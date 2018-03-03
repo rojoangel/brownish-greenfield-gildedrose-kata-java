@@ -26,4 +26,11 @@ public class GildedRoseItemTest {
         item.endOfDay();
         assertEquals(8, item.getQuality());
     }
+
+    @Test
+    public void should_not_have_negative_quality() {
+        GildedRoseItem item = new GildedRoseItem("Generic Item", 12, 0);
+        item.endOfDay();
+        assertEquals(0, item.getQuality());
+    }
 }

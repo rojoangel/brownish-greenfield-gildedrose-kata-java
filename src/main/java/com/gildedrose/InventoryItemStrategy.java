@@ -1,13 +1,10 @@
-package com.gildedrose.items;
+package com.gildedrose;
 
-import com.gildedrose.InventoryItem;
-import com.gildedrose.Item;
-
-abstract class ItemStrategy implements InventoryItem {
+public abstract class InventoryItemStrategy implements InventoryItem {
 
     private final Item item;
 
-    public ItemStrategy(String name, int sellIn, int quality) {
+    public InventoryItemStrategy(String name, int sellIn, int quality) {
         this.item = new Item(name, sellIn, quality);
     }
 

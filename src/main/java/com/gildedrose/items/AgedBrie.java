@@ -1,8 +1,9 @@
 package com.gildedrose.items;
 
+import com.gildedrose.InventoryItemStrategy;
 import com.gildedrose.Item;
 
-public class AgedBrie extends ItemStrategy {
+public class AgedBrie extends InventoryItemStrategy {
 
     public AgedBrie(String name, int sellIn, int quality) {
         super(name, sellIn, quality);

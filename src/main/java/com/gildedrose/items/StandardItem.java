@@ -11,7 +11,11 @@ public class StandardItem extends InventoryItemStrategy {
 
     @Override
     protected void changeSellIn(Item item) {
-        item.sellIn--;
+        item.sellIn = decrease(item.sellIn);
+    }
+
+    private int decrease(int i) {
+        return i - 1;
     }
 
     @Override

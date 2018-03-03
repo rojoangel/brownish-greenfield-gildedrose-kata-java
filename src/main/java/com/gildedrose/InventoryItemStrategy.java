@@ -1,11 +1,15 @@
 package com.gildedrose;
 
+import com.gildedrose.algorithm.Algorithm;
+
 public abstract class InventoryItemStrategy implements InventoryItem {
 
     private final Item item;
+    private Algorithm sellInAlgorithm;
 
-    public InventoryItemStrategy(String name, int sellIn, int quality) {
+    public InventoryItemStrategy(String name, int sellIn, int quality, Algorithm sellInAlgorithm) {
         this.item = new Item(name, sellIn, quality);
+        this.sellInAlgorithm = sellInAlgorithm;
     }
 
     public int getSellIn() {
@@ -21,7 +25,9 @@ public abstract class InventoryItemStrategy implements InventoryItem {
         changeQuality(this.item);
     }
 
-    protected abstract void changeSellIn(Item item);
+    private void changeSellIn(Item item) {
+        item.sellIn = this.sellInAlgorithm.calculate(item.sellIn);
+    }
 
     protected abstract void changeQuality(Item item);
 }

@@ -1,9 +1,12 @@
-package com.gildedrose;
+package com.gildedrose.items;
 
-public class GildedRoseItem implements InventoryItem {
+import com.gildedrose.InventoryItem;
+import com.gildedrose.Item;
+
+public class StandardItem implements InventoryItem {
     private final Item item;
 
-    public GildedRoseItem(String name, int sellIn, int quality) {
+    public StandardItem(String name, int sellIn, int quality) {
         this.item = new Item(name, sellIn, quality);
     }
 
@@ -35,7 +38,7 @@ public class GildedRoseItem implements InventoryItem {
     }
 
     public String toString() {
-        return "GildedRoseItem{" +
+        return "StandardItem{" +
                 "item=" + item +
                 '}';
     }

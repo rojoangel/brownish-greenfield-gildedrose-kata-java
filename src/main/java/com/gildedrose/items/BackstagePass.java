@@ -16,6 +16,6 @@ public class BackstagePass extends InventoryItemStrategy {
 
     @Override
     protected void changeQuality(Item item) {
-
+        item.quality++;
     }
 }

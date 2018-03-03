@@ -13,4 +13,12 @@ public class BackstagePassTest {
         item.endOfDay();
         assertEquals(9, item.getSellIn());
     }
+
+    @Test
+    public void should_increase_in_quality_as_it_gets_older() {
+        BackstagePass item = (BackstagePass) item("Backstage Pass", 20, 10);
+        item.endOfDay();
+        assertEquals(11, item.getQuality());
+    }
+
 }

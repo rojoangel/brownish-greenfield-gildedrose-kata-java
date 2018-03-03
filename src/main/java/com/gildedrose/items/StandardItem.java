@@ -2,11 +2,9 @@ package com.gildedrose.items;
 
 import com.gildedrose.InventoryItemStrategy;
 import com.gildedrose.Item;
-import com.gildedrose.algorithm.EndOfDay;
+import com.gildedrose.algorithm.Decrease;
 
 public class StandardItem extends InventoryItemStrategy {
-
-    private final EndOfDay endOfDay = new EndOfDay();
 
     public StandardItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -14,7 +12,7 @@ public class StandardItem extends InventoryItemStrategy {
 
     @Override
     protected void changeSellIn(Item item) {
-        item.sellIn = endOfDay.decrease(item.sellIn);
+        item.sellIn = new Decrease().calculate(item.sellIn);
     }
 
     @Override

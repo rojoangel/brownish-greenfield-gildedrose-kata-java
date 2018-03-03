@@ -16,8 +16,12 @@ public class GildedRoseItem {
     }
 
     public void endOfDay() {
-        this.item.sellIn--;
+        decreaseSellIn();
         decreaseQuality();
+    }
+
+    private void decreaseSellIn() {
+        this.item.sellIn--;
     }
 
     private void decreaseQuality() {

@@ -17,6 +17,10 @@ public class GildedRoseItem {
 
     public void endOfDay() {
         this.item.sellIn--;
+        decreaseQuality();
+    }
+
+    private void decreaseQuality() {
         if (getSellIn() < 0) {
             this.item.quality--;
         }

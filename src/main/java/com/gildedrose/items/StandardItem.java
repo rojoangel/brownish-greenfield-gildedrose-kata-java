@@ -1,45 +1,26 @@
 package com.gildedrose.items;
 
-import com.gildedrose.InventoryItem;
 import com.gildedrose.Item;
 
-public class StandardItem implements InventoryItem {
-    private final Item item;
+public class StandardItem extends ItemStrategy {
 
     public StandardItem(String name, int sellIn, int quality) {
-        this.item = new Item(name, sellIn, quality);
+        super(name, sellIn, quality);
     }
 
-    public int getSellIn() {
-        return this.item.sellIn;
+    @Override
+    protected void changeSellIn(Item item) {
+        item.sellIn--;
     }
 
-    public int getQuality() {
-        return this.item.quality;
-    }
-
-    public void endOfDay() {
-        decreaseSellIn();
-        decreaseQuality();
-    }
-
-    private void decreaseSellIn() {
-        this.item.sellIn--;
-    }
-
-    private void decreaseQuality() {
+    @Override
+    protected void changeQuality(Item item) {
         if (getSellIn() < 0) {
-            this.item.quality--;
+            item.quality--;
         }
-        this.item.quality--;
-        if (this.item.quality < 0) {
-            this.item.quality = 0;
+        item.quality--;
+        if (item.quality < 0) {
+            item.quality = 0;
         }
-    }
-
-    public String toString() {
-        return "StandardItem{" +
-                "item=" + item +
-                '}';
     }
 }

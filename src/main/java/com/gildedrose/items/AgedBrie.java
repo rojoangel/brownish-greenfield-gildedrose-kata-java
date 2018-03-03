@@ -1,33 +1,20 @@
 package com.gildedrose.items;
 
-import com.gildedrose.InventoryItem;
 import com.gildedrose.Item;
 
-public class AgedBrie implements InventoryItem {
-    private final Item item;
+public class AgedBrie extends ItemStrategy {
 
     public AgedBrie(String name, int sellIn, int quality) {
-        this.item = new Item(name, sellIn, quality);
+        super(name, sellIn, quality);
     }
 
-    public int getSellIn() {
-        return this.item.sellIn;
+    @Override
+    protected void changeSellIn(Item item) {
+        item.sellIn--;
     }
 
-    public int getQuality() {
-        return this.item.quality;
-    }
-
-    public void endOfDay() {
-        decreaseSellIn();
-        increaseQuality();
-    }
-
-    private void decreaseSellIn() {
-        this.item.sellIn--;
-    }
-
-    private void increaseQuality() {
-        this.item.quality++;
+    @Override
+    protected void changeQuality(Item item) {
+        item.quality++;
     }
 }

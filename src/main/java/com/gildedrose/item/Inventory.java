@@ -1,5 +1,6 @@
 package com.gildedrose.item;
 
+import com.gildedrose.Item;
 import com.gildedrose.algorithm.*;
 
 public class Inventory {
@@ -8,17 +9,31 @@ public class Inventory {
 
     public static InventoryItem item(String name, int sellIn, int quality) {
         if ("Aged Brie".equals(name)) {
-            return new InventoryItem(name, sellIn, quality, new DecreaseSellIn(), new IncreaseQualityWithCeiling(50));
+            return new InventoryItem(
+                    new Item(name, sellIn, quality),
+                    new DecreaseSellIn(),
+                    new IncreaseQualityWithCeiling(50)
+            );
         }
 
         if ("Sulfuras".equals(name)) {
-            return new InventoryItem(name, sellIn, LEGENDARY_QUALITY, new KeepSellIn(), new KeepQuality());
+            return new InventoryItem(
+                    new Item(name, sellIn, LEGENDARY_QUALITY),
+                    new KeepSellIn(),
+                    new KeepQuality()
+            );
         }
 
         if ("Backstage Pass".equals(name)) {
-            return new InventoryItem(name, sellIn, quality, new DecreaseSellIn(), new StaggeredQualityIncreaseWithDropToZeroAfterSellIn());
+            return new InventoryItem(
+                    new Item(name, sellIn, quality),
+                    new DecreaseSellIn(),
+                    new StaggeredQualityIncreaseWithDropToZeroAfterSellIn());
         }
 
-        return new InventoryItem(name, sellIn, quality, new DecreaseSellIn(), new DecreaseQualityWithZeroGroudTwiceFasterAfterSellIn());
+        return new InventoryItem(
+                new Item(name, sellIn, quality),
+                new DecreaseSellIn(),
+                new DecreaseQualityWithZeroGroudTwiceFasterAfterSellIn());
     }
 }

@@ -10,8 +10,8 @@ public class InventoryItem implements AgingItem {
     private AgingAlgorithm sellInAgingAlgorithm;
     private AgingAlgorithm qualityAgingAlgorithm;
 
-    public InventoryItem(String name, int sellIn, int quality, AgingAlgorithm sellInAgingAlgorithm, AgingAlgorithm qualityAgingAlgorithm) {
-        this.item = new Item(name, sellIn, quality);
+    public InventoryItem(Item item, AgingAlgorithm sellInAgingAlgorithm, AgingAlgorithm qualityAgingAlgorithm) {
+        this.item = item;
         this.sellInAgingAlgorithm = sellInAgingAlgorithm;
         this.qualityAgingAlgorithm = qualityAgingAlgorithm;
     }

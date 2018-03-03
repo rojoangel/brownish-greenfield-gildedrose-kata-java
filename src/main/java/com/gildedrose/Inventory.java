@@ -6,15 +6,15 @@ import com.gildedrose.items.Sulfuras;
 
 public class Inventory {
 
-    public static InventoryItem item(String name, int sellIn, int quantity) {
+    public static InventoryItem item(String name, int sellIn, int quality) {
         if ("Aged Brie".equals(name)) {
-            return new AgedBrie(name, sellIn, quantity);
+            return new AgedBrie(name, sellIn, quality);
         }
 
         if ("Sulfuras".equals(name)) {
-            return new Sulfuras(name, sellIn, quantity);
+            return new Sulfuras(name, sellIn, quality);
         }
 
-        return new StandardItem(name, sellIn, quantity);
+        return new StandardItem(name, sellIn, quality);
     }
 }

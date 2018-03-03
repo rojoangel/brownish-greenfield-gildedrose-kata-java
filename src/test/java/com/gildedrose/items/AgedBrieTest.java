@@ -1,5 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.items;
 
+import com.gildedrose.InventoryItem;
 import org.junit.Test;
 
 import static com.gildedrose.Inventory.item;

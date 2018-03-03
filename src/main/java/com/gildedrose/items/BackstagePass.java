@@ -16,7 +16,7 @@ public class BackstagePass extends InventoryItemStrategy {
 
     @Override
     protected void changeQuality(Item item) {
-        
+
         if (item.sellIn <= 5) {
             item.quality++;
         }
@@ -26,5 +26,9 @@ public class BackstagePass extends InventoryItemStrategy {
         }
 
         item.quality++;
+
+        if (item.sellIn < 0) {
+            item.quality = 0;
+        }
     }
 }

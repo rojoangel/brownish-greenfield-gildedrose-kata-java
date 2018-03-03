@@ -34,4 +34,11 @@ public class BackstagePassTest {
         item.endOfDay();
         assertEquals(13, item.getQuality());
     }
+
+    @Test
+    public void should_drop_to_zero_quality_after_the_concert() {
+        BackstagePass item = (BackstagePass) item("Backstage Pass", 0, 10);
+        item.endOfDay();
+        assertEquals(0, item.getQuality());
+    }
 }

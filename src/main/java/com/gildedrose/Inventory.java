@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import com.gildedrose.items.AgedBrie;
+import com.gildedrose.items.BackstagePass;
 import com.gildedrose.items.StandardItem;
 import com.gildedrose.items.Sulfuras;
 
@@ -15,6 +16,10 @@ public class Inventory {
 
         if ("Sulfuras".equals(name)) {
             return new Sulfuras(name, sellIn, LEGENDARY_QUALITY);
+        }
+
+        if ("Backstage Pass".equals(name)) {
+            return new BackstagePass(name, sellIn, quality);
         }
 
         return new StandardItem(name, sellIn, quality);

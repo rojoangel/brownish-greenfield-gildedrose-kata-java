@@ -8,7 +8,8 @@ public class Inventory {
     private static final int LEGENDARY_QUALITY = 80;
 
     public static InventoryItem item(String name, int sellIn, int quality) {
-        if ("Aged Brie".equals(name)) {
+
+        if (name.contains("Aged Brie")) {
             return new InventoryItem(
                     new Item(name, sellIn, quality),
                     new DecreaseSellIn(),
@@ -16,7 +17,7 @@ public class Inventory {
             );
         }
 
-        if ("Sulfuras".equals(name)) {
+        if (name.contains("Sulfuras")) {
             return new InventoryItem(
                     new Item(name, sellIn, LEGENDARY_QUALITY),
                     new KeepSellIn(),
@@ -24,7 +25,7 @@ public class Inventory {
             );
         }
 
-        if ("Backstage Pass".equals(name)) {
+        if (name.contains("Backstage Pass")) {
             return new InventoryItem(
                     new Item(name, sellIn, quality),
                     new DecreaseSellIn(),

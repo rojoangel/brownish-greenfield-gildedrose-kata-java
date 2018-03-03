@@ -6,10 +6,12 @@ public abstract class InventoryItemStrategy implements InventoryItem {
 
     private final Item item;
     private Algorithm sellInAlgorithm;
+    private Algorithm qualityAlgorithm;
 
-    public InventoryItemStrategy(String name, int sellIn, int quality, Algorithm sellInAlgorithm) {
+    public InventoryItemStrategy(String name, int sellIn, int quality, Algorithm sellInAlgorithm, Algorithm qualityAlgorithm) {
         this.item = new Item(name, sellIn, quality);
         this.sellInAlgorithm = sellInAlgorithm;
+        this.qualityAlgorithm = qualityAlgorithm;
     }
 
     public int getSellIn() {
@@ -29,5 +31,7 @@ public abstract class InventoryItemStrategy implements InventoryItem {
         this.sellInAlgorithm.apply(item);
     }
 
-    protected abstract void changeQuality(Item item);
+    private void changeQuality(Item item) {
+        this.qualityAlgorithm.apply(item);
+    }
 }

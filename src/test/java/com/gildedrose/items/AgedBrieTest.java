@@ -1,9 +1,9 @@
 package com.gildedrose.items;
 
-import com.gildedrose.InventoryItem;
+import com.gildedrose.item.InventoryItem;
 import org.junit.Test;
 
-import static com.gildedrose.Inventory.item;
+import static com.gildedrose.item.Inventory.item;
 import static org.junit.Assert.assertEquals;
 
 public class AgedBrieTest {

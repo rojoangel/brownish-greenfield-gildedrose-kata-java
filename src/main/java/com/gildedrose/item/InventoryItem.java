@@ -1,4 +1,8 @@
-package com.gildedrose;
+package com.gildedrose.item;
+
+import com.gildedrose.AgingAlgorithm;
+import com.gildedrose.AgingItem;
+import com.gildedrose.Item;
 
 public class InventoryItem implements AgingItem {
 

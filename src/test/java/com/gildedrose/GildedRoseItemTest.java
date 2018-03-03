@@ -19,4 +19,11 @@ public class GildedRoseItemTest {
         item.endOfDay();
         assertEquals(9, item.getQuality());
     }
+
+    @Test
+    public void should_decrease_quality_twice_as_fast_once_the_sell_by_date_has_passed() {
+        GildedRoseItem item = new GildedRoseItem("Generic Item", 0, 10);
+        item.endOfDay();
+        assertEquals(8, item.getQuality());
+    }
 }

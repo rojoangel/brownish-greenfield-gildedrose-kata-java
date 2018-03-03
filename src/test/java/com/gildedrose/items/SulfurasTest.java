@@ -15,10 +15,10 @@ public class SulfurasTest {
     }
 
     @Test
-    public void should_not_decrease_in_quality() {
+    public void should_always_have_a_quality_equal_to_80() {
         Sulfuras item = (Sulfuras) item("Sulfuras", 10, 10);
         item.endOfDay();
-        assertEquals(10, item.getQuality());
+        assertEquals(80, item.getQuality());
 
     }
 }

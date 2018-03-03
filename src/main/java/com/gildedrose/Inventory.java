@@ -12,7 +12,7 @@ public class Inventory {
         }
 
         if ("Sulfuras".equals(name)) {
-            return new Sulfuras(name, sellIn, quality);
+            return new Sulfuras(name, sellIn, 80);
         }
 
         return new StandardItem(name, sellIn, quality);

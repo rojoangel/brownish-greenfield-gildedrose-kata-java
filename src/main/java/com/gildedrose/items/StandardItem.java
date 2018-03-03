@@ -2,12 +2,12 @@ package com.gildedrose.items;
 
 import com.gildedrose.InventoryItemStrategy;
 import com.gildedrose.Item;
-import com.gildedrose.algorithm.Decrease;
+import com.gildedrose.algorithm.DecreaseSellIn;
 
 public class StandardItem extends InventoryItemStrategy {
 
     public StandardItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality, new Decrease());
+        super(name, sellIn, quality, new DecreaseSellIn());
     }
 
     @Override

@@ -26,7 +26,7 @@ public abstract class InventoryItemStrategy implements InventoryItem {
     }
 
     private void changeSellIn(Item item) {
-        item.sellIn = this.sellInAlgorithm.calculate(item.sellIn);
+        this.sellInAlgorithm.apply(item);
     }
 
     protected abstract void changeQuality(Item item);

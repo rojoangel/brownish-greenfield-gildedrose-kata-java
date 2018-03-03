@@ -19,7 +19,12 @@ public class AgedBrie implements InventoryItem {
     }
 
     public void endOfDay() {
+        decreaseSellIn();
         increaseQuality();
+    }
+
+    private void decreaseSellIn() {
+        this.item.sellIn--;
     }
 
     private void increaseQuality() {

@@ -17,5 +17,8 @@ public class AgedBrie extends InventoryItemStrategy {
     @Override
     protected void changeQuality(Item item) {
         item.quality++;
+        if (item.quality > 50) {
+            item.quality = 50;
+        }
     }
 }

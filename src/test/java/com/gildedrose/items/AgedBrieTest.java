@@ -21,4 +21,10 @@ public class AgedBrieTest {
         assertEquals(9, item.getSellIn());
     }
 
+    @Test
+    public void should_never_have_a_quality_bigger_than_50() {
+        AgedBrie item = (AgedBrie) item("Aged Brie", 10, 50);
+        item.endOfDay();
+        assertEquals(50, item.getQuality());
+    }
 }

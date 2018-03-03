@@ -26,6 +26,9 @@ public class InventoryItem implements AgingItem {
 
     public void endOfDay() {
         this.sellInAgingAlgorithm.apply(this.item);
+        if (item.name.contains("Conjured")) {
+            this.qualityAgingAlgorithm.apply(this.item);
+        }
         this.qualityAgingAlgorithm.apply(this.item);
     }
 

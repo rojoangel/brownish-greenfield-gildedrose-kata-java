@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class GildedRoseItem {
+public class GildedRoseItem implements InventoryItem {
     private final Item item;
 
     public GildedRoseItem(String name, int sellIn, int quality) {
@@ -34,7 +34,6 @@ public class GildedRoseItem {
         }
     }
 
-    @Override
     public String toString() {
         return "GildedRoseItem{" +
                 "item=" + item +

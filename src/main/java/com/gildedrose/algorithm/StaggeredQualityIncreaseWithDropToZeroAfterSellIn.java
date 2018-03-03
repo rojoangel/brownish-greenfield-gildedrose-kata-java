@@ -1,8 +1,9 @@
 package com.gildedrose.algorithm;
 
+import com.gildedrose.AgingAlgorithm;
 import com.gildedrose.Item;
 
-public class StaggeredQualityIncreaseWithDropToZeroAfterSellIn implements Algorithm {
+public class StaggeredQualityIncreaseWithDropToZeroAfterSellIn implements AgingAlgorithm {
 
     public void apply(Item item) {
         if (item.sellIn <= 5) {

@@ -1,8 +1,9 @@
 package com.gildedrose.algorithm;
 
+import com.gildedrose.AgingAlgorithm;
 import com.gildedrose.Item;
 
-public class IncreaseQualityWithCeiling implements Algorithm {
+public class IncreaseQualityWithCeiling implements AgingAlgorithm {
 
     private int ceiling;
 

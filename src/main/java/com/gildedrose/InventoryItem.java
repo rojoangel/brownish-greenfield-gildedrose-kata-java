@@ -1,17 +1,15 @@
 package com.gildedrose;
 
-import com.gildedrose.algorithm.Algorithm;
-
 public class InventoryItem implements AgingItem {
 
     private final Item item;
-    private Algorithm sellInAlgorithm;
-    private Algorithm qualityAlgorithm;
+    private AgingAlgorithm sellInAgingAlgorithm;
+    private AgingAlgorithm qualityAgingAlgorithm;
 
-    public InventoryItem(String name, int sellIn, int quality, Algorithm sellInAlgorithm, Algorithm qualityAlgorithm) {
+    public InventoryItem(String name, int sellIn, int quality, AgingAlgorithm sellInAgingAlgorithm, AgingAlgorithm qualityAgingAlgorithm) {
         this.item = new Item(name, sellIn, quality);
-        this.sellInAlgorithm = sellInAlgorithm;
-        this.qualityAlgorithm = qualityAlgorithm;
+        this.sellInAgingAlgorithm = sellInAgingAlgorithm;
+        this.qualityAgingAlgorithm = qualityAgingAlgorithm;
     }
 
     public int getSellIn() {
@@ -23,8 +21,8 @@ public class InventoryItem implements AgingItem {
     }
 
     public void endOfDay() {
-        this.sellInAlgorithm.apply(this.item);
-        this.qualityAlgorithm.apply(this.item);
+        this.sellInAgingAlgorithm.apply(this.item);
+        this.qualityAgingAlgorithm.apply(this.item);
     }
 
 }

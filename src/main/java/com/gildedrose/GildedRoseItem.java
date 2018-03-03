@@ -11,8 +11,13 @@ public class GildedRoseItem {
         return this.item.sellIn;
     }
 
+    public int getQuality() {
+        return this.item.quality;
+    }
+
     public void endOfDay() {
         this.item.sellIn--;
+        this.item.quality--;
     }
 
     @Override

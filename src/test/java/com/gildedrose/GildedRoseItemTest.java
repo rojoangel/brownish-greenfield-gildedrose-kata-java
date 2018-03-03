@@ -12,4 +12,11 @@ public class GildedRoseItemTest {
         item.endOfDay();
         assertEquals(9, item.getSellIn());
     }
+
+    @Test
+    public void should_decrease_quality_at_the_end_of_day() {
+        GildedRoseItem item = new GildedRoseItem("Generic Item", 10, 10);
+        item.endOfDay();
+        assertEquals(9, item.getQuality());
+    }
 }

@@ -13,4 +13,12 @@ public class SulfurasTest {
         item.endOfDay();
         assertEquals(10, item.getSellIn());
     }
+
+    @Test
+    public void should_not_decrease_in_quality() {
+        Sulfuras item = (Sulfuras) item("Sulfuras", 10, 10);
+        item.endOfDay();
+        assertEquals(10, item.getQuality());
+
+    }
 }

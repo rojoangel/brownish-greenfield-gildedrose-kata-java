@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.algorithm.Algorithm;
 
-public abstract class InventoryItemStrategy implements InventoryItem {
+public class InventoryItemStrategy implements InventoryItem {
 
     private final Item item;
     private Algorithm sellInAlgorithm;
